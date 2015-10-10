@@ -30,12 +30,6 @@ class PortfolioController extends AbstractActionController {
     }
 
     public function indexAction() {
-        $this->layout()->setVariables(array(
-            'bodyId' => 'portfolio',
-            'bodyClass' => 'tab1',
-            )
-        );
-
         // @TODO includeHidden parameter
         return new ViewModel(array(
             'portfolios' => $this->portfolioService->findAll()
@@ -43,11 +37,6 @@ class PortfolioController extends AbstractActionController {
     }
 
     public function viewAction() {
-        $this->layout()->setVariables(array(
-            'bodyId' => 'portfolio',
-            )
-        );
-
         $title = $this->params()->fromRoute('title');
 
         try {
