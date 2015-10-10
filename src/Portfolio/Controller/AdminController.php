@@ -37,24 +37,7 @@ class AdminController extends AbstractActionController {
         // );
     }
 
-    public function setUp() {
-        $config = new \Zend\Config\Config($this->getServiceLocator()->get('config'));
-
-        $this->layout()->setVariables(array(
-            'headerTemplate' => $config->layout->header,
-            'bodyId' => 'admin',
-            'bodyClass' => 'index',
-            //'title' => $this->title,
-        ));
-    }
-
     public function indexAction() {
-        // $this->layout()->setVariables(array(
-        //     'bodyId' => 'portfolio',
-        //     )
-        // );
-        $this->setUp();
-
         $portfolios = $this->portfolioService->findAll(true);
 
         $viewModel = new ViewModel(array(
@@ -65,12 +48,7 @@ class AdminController extends AbstractActionController {
         return $viewModel;
     }
 
-    public function addAction() { // TODO
-        // $this->layout()->setVariables(array(
-        //     'bodyId' => 'portfolio',
-        //     )
-        // );
-        $this->setUp();
+    public function addAction() {
         $heading = 'Add New Portfolio';
         $request = $this->getRequest();
         $portfolio = new Portfolio();
@@ -101,7 +79,6 @@ class AdminController extends AbstractActionController {
     }
 
     public function editAction() {
-        $this->setUp();
         $heading = 'Edit Portfolio';
         $portfolio = $this->portfolioService->find($this->params('id'));
         $this->portfolioForm->bind($portfolio);
