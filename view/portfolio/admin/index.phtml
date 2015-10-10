@@ -1,0 +1,35 @@
+<div id="main">
+    <section id="content">
+        <header>
+            <h1 class="top-corners-10">Portfolio Editing</h1>
+        </header>
+        <div class="article-content bottom-corners-10">
+        <?php
+            echo '<h2><a href="/admin/portfolio/add">Add new portfolio element</a></h2>';
+
+            if (count($this->portfolios) > 0 ) {
+                echo '<nav><div><ul>';
+
+                foreach ($portfolios as $portfolio) {
+                    echo '<li><h3 class="hide' . $portfolio->getHide() . '">' . $portfolio->getTitle() . ' -
+                    <a href="/admin/portfolio/edit/' . $portfolio->getId() . '">Edit</a> | ';
+                    if ($portfolio->getHide()) {
+                        echo '<a href="/admin/portfolio/show/' . $portfolio->getId() . '">Show</a>';
+                    } else {
+                        echo '<a href="/admin/portfolio/hide/' . $portfolio->getId() . '">Hide</a>';
+                    }
+                    echo '</li>';
+                }
+
+                echo '</ul></div></nav>';
+            } else {
+                echo '<h3>There are no portfolios for this portfolio.</h3>';
+            }
+        ?>
+        </div>
+    </section>
+</div>
+
+
+
+

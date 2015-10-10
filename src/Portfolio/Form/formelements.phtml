@@ -1,0 +1,129 @@
+    $portfolio = $form->get('portfolio');
+            //echo $this->formHidden($form->get('csrf'));
+            echo $this->formHidden($portfolio->get('id'));
+            ?><dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('title')->getName() ?>">
+                            <?= $portfolio->get('title')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('title')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('title')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('short_title')->getName() ?>">
+                            <?= $portfolio->get('short_title')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('short_title')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('short_title')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('thumb')->getName() ?>">
+                            <?= $portfolio->get('thumb')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('thumb')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('thumb')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('client')->getName() ?>">
+                            <?= $portfolio->get('client')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('client')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('client')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('tools')->getName() ?>">
+                            <?= $portfolio->get('tools')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('tools')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('tools')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('url')->getName() ?>">
+                            <?= $portfolio->get('url')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('url')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('url')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('url_text')->getName() ?>">
+                            <?= $portfolio->get('url_text')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('url_text')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('url_text')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('banner')->getName() ?>">
+                            <?= $portfolio->get('banner')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('banner')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('banner')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('html')->getName() ?>">
+                            <?= $portfolio->get('html')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('html')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('html')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('sort')->getName() ?>">
+                            <?= $portfolio->get('sort')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('sort')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('sort')) ?>
+                    </dd>
+                </dl>
+                <dl class="control-group">
+                    <dt>
+                        <label class="control-label" for="<?= $portfolio->get('hide')->getName() ?>">
+                            <?= $portfolio->get('hide')->getLabel() ?>
+                        </label>
+                    </dt>
+                    <dd class ="controls">
+                        <?=  $this->formElement($portfolio->get('hide')) ?>
+                        <?=  $this->formElementErrors($portfolio->get('hide')) ?>
+                    </dd>
+                </dl>
+                <dl class="submitbutton">
+                    <dd class ="form-actions">
+                        <?=  $this->formElement($form->get('submit')) ?>
+                    </dd>
+                </dl>

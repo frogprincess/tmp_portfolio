@@ -1,0 +1,33 @@
+<div id="main">
+    <section id="content">
+        <header>
+            <h1>Portfolio<span class="small"> &nbsp;(click image to enlarge)</span></h1>
+        </header>
+        <div>
+            <div class="article-content">
+                <ul class="row">
+                    <?php
+                    $num = count($this->portfolios);
+                    $i = 0;
+                        foreach ($this->portfolios as $portfolio) {
+                            echo '<li><div class="portfolio">';
+                            echo '<div class="portfoliowrapper all-corners-5">';
+                            echo '<a class="portfolioimg" title="' . $portfolio->getTitle() . '" href="/images/portfolio/' . $portfolio->getLightbox() . '"><img id="lightbox_' . $i . '" class="lightbox img-responsive all-corners-5" alt="Responsive image"src="/images/portfolio/' . $portfolio->getThumb() . '" width="220" height="250" alt=""/></a>';
+                            echo '<a class="portfoliotxt all-corners-5" href="' . $this->portfolioUrl($portfolio->getShortTitle())  . '"><h3>' . $portfolio->getShortTitle() . '</h3></a>';
+                            echo '</div></div></li>';
+                            $i++;
+                            if ($i%3 == 0) {
+                                echo '<div class="clearfix visible-lg visible-md"></div>';
+                            }
+                            if ($i%2 == 0) {
+                                echo '<div class="clearfix visible-sm"></div>';
+                            }
+                         }
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+</div>
+

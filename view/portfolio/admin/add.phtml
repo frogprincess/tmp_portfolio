@@ -1,0 +1,38 @@
+
+<div id="main">
+    <section id="content">
+        <header>
+            <?php
+            $namespaces = array('error', 'success', 'info', 'default');
+
+            foreach($namespaces as $namespace) :
+                $flashMessages = $this->flashmessenger()->render($namespace);
+
+                if (!empty($flashMessages)) :
+            ?>
+                <div class="alert alert-<?= $namespace ?>" data-alert="alert">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <h2 class=\"portfoliolistheader\"><?php echo $flashMessages ?></h2>
+                </div>
+            <?php
+                endif;
+
+            endforeach;
+            ?>
+            <h1 class="top-corners-10">
+                <?php echo $this->heading; ?>
+            </h1>
+        </header>
+        <div class="article-content bottom-corners-10">
+            <a href="/admin/portfolio">Back to Portfolio Index</a>
+            <?php
+            // $form = $this->form;
+            // $form->setAttribute('action', $this->url());
+            // $this->partialLoop()->setObjectKey('form');
+            // echo $this->partialLoop('portfolio/admin/_form.phtml', $form);
+            // $this->partialLoop()->setObjectKey(null);
+            require('_form.phtml');
+            ?>
+        </div>
+    </section>
+</div>

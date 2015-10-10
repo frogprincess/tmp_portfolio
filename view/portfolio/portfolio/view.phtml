@@ -1,0 +1,33 @@
+<div id="main">
+    <section id="content">
+        <header>
+            <h1><?php echo $this->portfolio->getTitle() ?></h1>
+        </header>
+        <div>
+            <div class="article-content portfolioind">
+                <div>
+                    <img class="img-responsive portfolioindimg all-corners-5" alt="<?php echo $this->portfolio->getTitle() ?>" src="/images/portfolio/<?php echo $this->portfolio->getBanner() ?>"/>
+                </div>
+                <div>
+                    <div class="portfolio-description">
+                        <?php
+                        if ($this->portfolio->getClient()) {
+                            echo '<p><strong>Client: </strong>' . $this->portfolio->getClient() . '</p>';
+                        }
+
+                        if ($this->portfolio->getTools()) {
+                            echo '<p><strong>Tools: </strong>' . $this->portfolio->getTools() . '</p>';
+                        }
+
+                        echo $this->portfolio->getHtml();
+
+                        if ($this->portfolio->getUrl()) {
+                            echo '<p>Visit <a class="inline" href="' . $this->portfolio->getUrl() . '" target="_blank">' . $this->portfolio->getUrlText() . '</a></p>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
