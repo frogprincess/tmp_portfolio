@@ -1,7 +1,71 @@
-<?php
-            $form->prepare();
-            echo $this->form()->openTag($form);
+<?php $form->prepare(); ?>
+<?php echo $this->form()->openTag($form); ?>
+<fieldset>
+    <legend>Portfolio</legend>
+    <ul>
+        <li><?php echo $this->formHidden($form->get('portfoliofieldset')->get('id')); ?></li>
+        <li><?php echo $this->formHidden($form->get('portfoliofieldset')->get('thumb')); ?></li>
+        <li><?php echo $this->formHidden($form->get('portfoliofieldset')->get('lightbox')); ?></li>
+        <li><?php echo $this->formHidden($form->get('portfoliofieldset')->get('banner')); ?></li>
 
-            echo $this->formCollection($form);
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('title')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('title')); ?></li>
+        <li><?php echo $this->formText($form->get('portfoliofieldset')->get('title')); ?></li>
 
-            $this->form()->closeTag();
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('short_title')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('short_title')); ?></li>
+        <li><?php echo $this->formText($form->get('portfoliofieldset')->get('short_title')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('client')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('client')); ?></li>
+        <li><?php echo $this->formText($form->get('portfoliofieldset')->get('client')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('tools')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('tools')); ?></li>
+        <li><?php echo $this->formText($form->get('portfoliofieldset')->get('tools')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('url')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('url')); ?></li>
+        <li><?php echo $this->formUrl($form->get('portfoliofieldset')->get('url')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('url_text')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('url_text')); ?></li>
+        <li><?php echo $this->formText($form->get('portfoliofieldset')->get('url_text')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('html')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('html')); ?></li>
+        <li><?php echo $this->formTextarea($form->get('portfoliofieldset')->get('html')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('sort')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('sort')); ?></li>
+        <li><?php echo $this->formText($form->get('portfoliofieldset')->get('sort')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('portfoliofieldset')->get('hide')); ?></li>
+        <li><?php echo $this->formLabel($form->get('portfoliofieldset')->get('hide')); ?></li>
+        <li><?php echo $this->formCheckbox($form->get('portfoliofieldset')->get('hide')); ?></li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('thumb_file')); ?></li>
+        <li><?php echo $this->formLabel($form->get('thumb_file')); ?></li>
+        <li>
+            <?php echo $this->formFile($form->get('thumb_file')); ?>
+            <img class="upload-img" src=<?php echo '/images/portfolio/' . $form->get('portfoliofieldset')->get('thumb')->getValue(); ?> />
+        </li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('lightbox_file')); ?></li>
+        <li><?php echo $this->formLabel($form->get('lightbox_file')); ?></li>
+        <li>
+            <?php echo $this->formFile($form->get('lightbox_file')); ?>
+            <img class="upload-img" src=<?php echo '/images/portfolio/' . $form->get('portfoliofieldset')->get('lightbox')->getValue(); ?> />
+        </li>
+
+        <li class="error"><?php echo $this->formElementErrors($form->get('banner_file')); ?></li>
+        <li><?php echo $this->formLabel($form->get('banner_file')); ?></li>
+        <li>
+            <?php echo $this->formFile($form->get('banner_file')); ?>
+            <img class="upload-img" src=<?php echo '/images/portfolio/' . $form->get('portfoliofieldset')->get('banner')->getValue(); ?> />
+        </li>
+
+        <li><?php echo $this->formSubmit($form->get('submit')); ?></li>
+    </ul>
+</fieldset>
+<?php echo $this->form()->closeTag(); ?>
