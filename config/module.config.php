@@ -84,12 +84,12 @@ return array(
     ),
     'view_manager' => array(
         'template_map' => array(
-            'admin/layout'           => __DIR__ . '/../../Application/view/layout/admin.phtml',
+            // 'layout/admin' => __DIR__ . '/../../Application/view/layout/admin.phtml',
         ),
         'template_path_stack' => array(
             'portfolio' => __DIR__ . '/../view',
         ),
-        'layout' => 'admin/layout',
+        // 'layout' => 'admin/layout',
     ),
     'view_helpers' => array(
         'factories' => array(
